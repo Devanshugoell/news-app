@@ -1,1 +1,1 @@
-This News app was build using react js 
+This News app was built using React.js
