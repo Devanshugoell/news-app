@@ -4,15 +4,14 @@ import SearchIcon from "./search.png";
 import "./Newsapp.css";
 
 const Newsapp = () => {
+  const API_KEY = "5f7c773236d1413882ddbf7903e27fae";
+
   return (
     <div>
       <nav>
         <div>
           <h1>TRENDY NEWS</h1>
         </div>
-        <ul>
-          <h1>ALL TREANDING NEWS</h1>
-        </ul>
         <div className="searchBar">
           <input type="text" placeholder="Search News" />
           <button>
@@ -20,6 +19,9 @@ const Newsapp = () => {
           </button>
         </div>
       </nav>
+      <div>
+        <p className="heading">Stay Updated With Trendy News</p>
+      </div>
       <div className="categoryBtn">
         <button>Sports</button>
         <button>Politics</button>
