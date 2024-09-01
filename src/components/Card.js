@@ -2,10 +2,6 @@ import React from "react";
 import "./Card.css";
 
 const Card = ({ data }) => {
-  if (data === null) {
-    return null;
-  }
-
   return (
     <div className="cardContainer">
       {data.map((curItem, index) => {

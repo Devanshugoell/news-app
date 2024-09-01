@@ -62,7 +62,7 @@ const Newsapp = () => {
         </button>
       </div>
       <div className="cardComponets">
-        <Card data={newsData} />
+        {newsData ? <Card data={newsData} /> : null}
       </div>
     </div>
   );
