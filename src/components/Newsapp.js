@@ -1,12 +1,16 @@
 import Card from "./Card";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SearchIcon from "./search.png";
 import "./Newsapp.css";
 
 const Newsapp = () => {
-  const [search, setSearch] = useState("india");
+  const [search, setSearch] = useState("usa");
   const [newsData, setNewsData] = useState(null);
   const API_KEY = "5f7c773236d1413882ddbf7903e27fae";
+
+  useEffect(() => {
+    getData();
+  }, []);
 
   const getData = async () => {
     const response = await fetch(
@@ -27,6 +31,7 @@ const Newsapp = () => {
             type="text"
             placeholder="Search News"
             onChange={(e) => setSearch(e.target.value)}
+            value={search}
           />
           <button onClick={getData}>
             <img src={SearchIcon} alt="search icon" />
@@ -37,11 +42,24 @@ const Newsapp = () => {
         <p className="heading">Stay Updated With Trendy News</p>
       </div>
       <div className="categoryBtn">
-        <button>Sports</button>
-        <button>Politics</button>
-        <button>Entertainment</button>
-        <button>Health</button>
-        <button>Fitness</button>
+        <button onClick={(e) => setSearch(e.target.value)} value="sports">
+          Sports
+        </button>
+        <button onClick={(e) => setSearch(e.target.value)} value="politics">
+          Politics
+        </button>
+        <button
+          onClick={(e) => setSearch(e.target.value)}
+          value="entertainment"
+        >
+          Entertainment
+        </button>
+        <button onClick={(e) => setSearch(e.target.value)} value="health">
+          Health
+        </button>
+        <button onClick={(e) => setSearch(e.target.value)} value="fitness">
+          Fitness
+        </button>
       </div>
       <div className="cardComponets">
         <Card data={newsData} />

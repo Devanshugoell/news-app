@@ -1,17 +1,30 @@
 import React from "react";
+import "./Card.css";
 
 const Card = ({ data }) => {
   console.log(data);
+
+  if (data === null) {
+    return null;
+  }
+
   return (
     <div className="cardContainer">
       {data.map((curItem, index) => {
+        if (!curItem.urlToImage) {
+          return null;
+        }
         return (
-          <div className="card">
-            <img src={curItem.urlToImage} />
-            <div className="cardContent">
-              <a href="/">{curItem.title}</a>
+          <div className="card" key={index}>
+            <img src={curItem.urlToImage} alt="images" />
+            <div className="content">
+              <a onClick={() => window.open(curItem.url)} className="title">
+                {curItem.title}
+              </a>
               <p>{curItem.description}</p>
-              <button>Read More</button>
+              <button onClick={() => window.open(curItem.url)}>
+                Read More
+              </button>
             </div>
           </div>
         );

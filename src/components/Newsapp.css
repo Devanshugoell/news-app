@@ -58,3 +58,24 @@ nav button img{
     margin: 1rem;
     word-spacing: 0.3rem;
   }
+
+  @media screen and (max-width: 480px){
+    nav input {
+        width: 150px;
+    }
+    .heading{
+        font-size: 20px;
+      }
+      h1 {
+        font-size: large;
+      }
+      .categoryBtn button{
+        font-size: 0.8rem;
+        padding: 0.2rem;
+      }
+      nav button img{
+        width: auto;
+        height: 25px;
+    }
+    
+  }
