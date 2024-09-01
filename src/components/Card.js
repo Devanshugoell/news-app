@@ -2,8 +2,6 @@ import React from "react";
 import "./Card.css";
 
 const Card = ({ data }) => {
-  console.log(data);
-
   if (data === null) {
     return null;
   }
