@@ -6,7 +6,7 @@ import "./Newsapp.css";
 const Newsapp = () => {
   const [search, setSearch] = useState("india");
   const [newsData, setNewsData] = useState(null);
-  const API_KEY = "5f7c773236d1413882ddbf7903e27fae";
+  const API_KEY = {YOUR-API-KEY};
 
   const getData = async () => {
     const response = await fetch(
